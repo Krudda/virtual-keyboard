@@ -13,7 +13,7 @@ function init () {
         let out = '';
         for (let i = 0; i < 14; i++) {
                 if ( i == 0) {
-                        out += `<div class = "key-area"><div class = "func-keys"><div class = "key func-key esc" id = "f-${i}">esc</div>`;
+                        out += `<div class="audio left"></div><div class = "key-area"><div class = "func-keys"><div class = "key func-key esc" id = "f-${i}">esc</div>`;
                 }
                 else if ( i == 13 ) {
                         out += `<div class = "key func-key" id = "f-${i}"></div></div>`;
@@ -87,7 +87,7 @@ function init () {
                                 break;
                         }
                         case 64: {
-                                out += `<div class ="key right-arrow"></div></div></div>`;
+                                out += `<div class ="key right-arrow"></div></div></div><div class="audio right"></div>`;
                                 break;
                         }
                         default: {
