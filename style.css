@@ -20,6 +20,7 @@
         margin: 0 auto;
         padding: calc(100%-845);
         /* background-color: beige; */
+        user-select: none; 
 }
 .monitor {
         position: relative;
@@ -56,7 +57,7 @@
         justify-content: center;
         align-items: flex-end;
 }
-.textarea {
+#textarea {
         padding: 5px;
         width: 880px;
         margin: auto;
@@ -74,14 +75,12 @@
         margin: auto;
         padding-top: 30px;
         width: 920px;
-        /* height: 540px; */
-        /* padding-bottom: 40px; */
         display: flex; 
         flex-wrap: wrap;
-        /* border: 2px solid black; */
         border-radius: 25px;
         box-sizing: border-box;
         background-color: rgb(148, 147, 147);
+        /* text-transform: capitalize; */
 }
 .key-area {
         margin:  auto;
@@ -163,7 +162,7 @@
         background-size: 18%;
         background-position: right 13px bottom 10px;
 }
-.key.backspace:hover {
+.key.backspace.active {
         background-size: 17%;
 }
 .func-keys {
@@ -179,7 +178,7 @@
         justify-content: flex-start;
         font-size: 10px;
 }
-.key.func-key.esc:hover {
+.key.func-key.esc.active {
         font-size: 9px;
 }
 #f-13 {
@@ -188,7 +187,7 @@
         background-size: 23%;
         background-position: center;
 }
-#f-13:hover {
+#f-13.active {
         background-size: 22%;
 }
 .key.tab {
@@ -198,7 +197,7 @@
         background-size: 20%;
         background-position: left 13px bottom 10px;
 }
-.key.tab:hover {
+.key.tab.active {
         background-size: 19%;
 }
 .key.enter {
@@ -209,18 +208,34 @@
         background-size: 30%;
         background-position: center top 30px;
 }
-.key.enter:hover {
+.key.enter.active {
         background-size: 29%;
 }
 .key.caps {
+        position: relative;
         width: 80px;
         background-image: url('./assets/images/caps.png');
         background-repeat: no-repeat;
         background-size: 18%;
         background-position: left 13px bottom 10px;
 }
-.key.caps:hover {
+.indicator {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: white;
+}
+.key.caps.active {
         background-size: 17%;
+}
+/* .key.caps.active>.indicator {
+        background-color:greenyellow;
+} */
+.indicator.caps-on {
+        background-color:greenyellow;
 }
 .key.lshift {
         width: 65px;
@@ -229,7 +244,7 @@
         background-size: 22%;
         background-position: left 13px bottom 10px;
 }
-.key.key.lshift:hover {
+.key.lshift.active {
         background-size: 21%;
 }
 .key.rshift {
@@ -239,11 +254,11 @@
         background-size: 12%;
         background-position: right 13px bottom 10px;
 }
-.key.rshift:hover {
+.key.rshift.active {
         background-size: 11%;
 }
-.key.fn:hover {
-        font-size: 9.8px;
+.key.fn.active {
+        font-size: 9.7px;
 }
 .key.cmd {
         width: 65px;
@@ -254,7 +269,7 @@
         background-size: 15%;
         background-position: right 10px top 10px;
 }
-.key.cmd:hover {
+.key.cmd.active {
         background-size: 14%;
         background-position: right 11px top 10px;
         font-size: 9.8px;
@@ -265,7 +280,7 @@
         background-size: 30%;
         background-position: right 10px top 10px;
 }
-.key.opt:hover {
+.key.opt.active {
         background-size: 29%;
         background-position: right 11px top 10px;
         font-size: 9.8px;
@@ -276,7 +291,7 @@
         background-size: 20%;
         background-position: right 10px top 10px;
 }
-.key.ctrl:hover {
+.key.ctrl.active {
         background-size: 19%;
         background-position: right 11px top 10px;
         font-size: 9.8px;
@@ -290,7 +305,7 @@
         background-size: 10%;
         background-position: center center;
 }
-.left-arrow:hover {
+.left-arrow.active {
         background-size: 9%;
 }
 .right-arrow {
@@ -299,7 +314,7 @@
         background-size: 10%;
         background-position: center center;
 }
-.right-arrow:hover {
+.right-arrow.active {
         background-size: 9%;
 }
 .key.arrow {
@@ -314,7 +329,7 @@
         background-size: 10%;
         background-position: center center;
 }
-.arrow:first-child:hover {
+.arrow:first-child.active {
         background-size: 9%;
 }
 .arrow:last-child {
@@ -328,17 +343,24 @@
         background-size: 10%;
         background-position: center center;
 }
-.arrow:last-child:hover {
+.arrow:last-child.active {
         background-size: 9%;
 }
-.key:hover {
+/* .key:hover {
+        box-shadow:
+                inset rgba(0,0,0,.8) -3px -3px 2px,
+                inset rgba(255,255,255,.4) 1px 1px 2px;
+        border: 1px solid rgb(97, 97, 97);
+        font-size: 14px;
+} */
+.key.active, .key.space.active {
         box-shadow:
                 inset rgba(0,0,0,.8) -3px -3px 2px,
                 inset rgba(255,255,255,.4) 1px 1px 2px;
         border: 1px solid rgb(97, 97, 97);
         font-size: 14px;
 }
-.key.func-key:hover {
+.key.func-key.active {
         font-size: 7px;
 }
 .naturalization {
@@ -347,7 +369,7 @@
         margin-top: 10px;
 }
 .touchpad {
-        width: 350px;
+        width: 300px;
         height: 170px;
         margin: auto;
         /* margin-top: 4px; */
