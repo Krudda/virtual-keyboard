@@ -35,21 +35,21 @@ body {
         padding-bottom: 15px;
         display: flex; 
         flex-wrap: wrap;
-        border-radius: 25px;
+        border-radius: 20px;
         box-sizing: border-box;
         background-color: rgb(15, 15, 15);
-        border: 2px solid rgb(148, 147, 147);
+        border: 1px solid rgb(148, 147, 147);
         font-family: Roboto-Light, Arial, Helvetica, sans-serif;
         font-size: 12px;
         justify-content: center;
         align-items: flex-end;
 }
 .monitor>span {
-        margin-top: -7px;
+        margin-top: -8px;
         z-index: 1000;
         color: gray;
         font-family: Roboto-Light, Arial, Helvetica, sans-serif;
-        font-size: 14px;
+        font-size: 11px;
         justify-content: center;
         align-items: flex-end;
 }
@@ -58,7 +58,8 @@ body {
         /* margin-left: 10px; */
         width: 100%;
         height: 318px;
-        background-color: rgb(51, 51, 51);
+        border-radius: 1px;
+        background-color: rgb(25, 23, 26);
         background-image: url('./assets/images/bg.png');
         background-repeat: no-repeat;
         background-size: 99%;
@@ -66,6 +67,16 @@ body {
 }
 #screen.hidden {
         display: none;
+}
+.camera {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        width: 2px;
+        height: 2px;
+        border: 2px solid rgb(26, 26, 26);
+        border-radius: 3px;
+        background-color: black;
 }
 #black-screen {
         position: relative;
@@ -102,14 +113,14 @@ body {
         /* transform: perspective(1000px); */
 }
 .support-text {
-        width: 396px;
+        width: 390px;
         height: 20px;
         margin-top: 48px;
         margin-left: 182px;
         padding: 5px;
         font-family: Roboto-Light, Arial, Helvetica, sans-serif;
         font-size: 10px;
-        background-color: rgb(43, 43, 43);
+        background-color: rgb(34, 33, 33);
         color: green;
 }
 #textarea {
@@ -117,8 +128,8 @@ body {
         /* margin-top: 48px; */
         margin-left: 182px;
         padding: 5px;
-        width: 396px;
-        height: 215px;
+        width: 390px;
+        height: 216px;
         /* margin: auto; */
         /* border-radius: 4px; */
         border: none;
@@ -126,7 +137,7 @@ body {
         outline: none;
         font-family: Roboto-Light, Arial, Helvetica, sans-serif;
         font-size: 11px;
-        background-color: rgb(43, 43, 43);
+        background-color: rgb(34, 33, 33);
         color: rgb(238, 238, 238);
 }
 #keyboard {
@@ -153,7 +164,7 @@ body {
         margin-bottom: 0;
         padding: 2px;
         border-radius: 6px;
-        border: 1px solid rgb(148, 147, 147);
+        /* border: 1px solid rgb(148, 147, 147); */
         box-shadow:
                 inset rgba(0,0,0,.8) 2px 2px 4px,
                 inset rgba(255,255,255,.6) -2px -2px 4px;

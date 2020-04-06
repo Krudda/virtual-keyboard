@@ -125,8 +125,7 @@ let mouseKeyHandler = function () {
                                         textarea.value += "\n";
                                         break;
                                 case 'Backspace':
-                                        let str = textarea.value.slice(0, -1);
-                                        textarea.value = str;
+                                        textarea.value = textarea.value.slice(0, -1);
                                         break;
                                 case 'CapsLock':
                                         event.target.classList.toggle('active');
