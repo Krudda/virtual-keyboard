@@ -5,7 +5,7 @@ export default function () {
                         out += `<div class="audio left"></div><div class = "key-area"><div class = "func-keys"><div class = "key func-key esc" id = "f-${i}">esc</div>`;
                 }
                 else if ( i == 13 ) {
-                        out += `<div class = "key func-key" id = "f-${i}"></div></div>`;
+                        out += `<div class = "key func-key" id = "onOff" data = "onOff"></div></div>`;
                 }
                 else {
                         out += `<div class = "key func-key" id = "f-${i}">F${i}</div>`;

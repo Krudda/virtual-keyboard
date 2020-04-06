@@ -1,12 +1,23 @@
 import keyboardRender from './keyboardRender.js';
 import { rusKeyCodes, enKeyCodes, shiftRusKeyCodes, shiftEnKeyCodes, capsEnKeyCodes,  capsRusKeyCodes } from './keyCodes.js';
 
+let currentLang;
+// sessionStorage.setItem('currentLang', 'enKeyCodes');
+
 keyboardRender();
+if (!localStorage.getItem('currentLang')) {
+        currentLang = enKeyCodes;
+}
+else {
+        localStorage.getItem('currentLang') == 'en' ? currentLang = enKeyCodes : currentLang = rusKeyCodes;
+}
+
+console.log(currentLang);
 
 let keyNums = document.querySelectorAll('.change');
 let textarea =  document.getElementById('textarea');
 textarea.value = '';
-let currentLang = enKeyCodes;
+// let currentLang = enKeyCodes;
 
 let alphabetRender = function (lang) {
         // console.log(lang[48]);
@@ -17,11 +28,7 @@ let alphabetRender = function (lang) {
         }
 }
 alphabetRender(currentLang);
-// for (let i = 0; i < 48; i++) {
-//         keyNums[i].innerHTML = String.fromCharCode(currentLang[i]);
-//         // keyNums[i].classList.add(`data = ${enKeyCodes[i]}`);
-//         keyNums[i].setAttribute('data', String.fromCharCode(currentLang[i]));
-// }
+
 
 // let enKB = [];
 // document.onkeypress = function(event) {
@@ -39,15 +46,9 @@ let keyHandler = function() {
                 if ((event.code == 'AltLeft' && event.ctrlKey) || (event.code == 'ControlLeft' && event.altKey))  {
                         console.log('Change!');
                         currentLang == rusKeyCodes ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
+                        localStorage.setItem('currentLang', currentLang[48]);
                         alphabetRender(currentLang);
                 }
-
-                // event = event || window.event;
-                // if (event.shiftKey && event.keyCode == 65) {
-                //         console.log('Change!');
-                // }
-
-
                 console.log(event);
                 console.log(event.keyCode);
                 switch (event.keyCode) {
@@ -65,6 +66,13 @@ let keyHandler = function() {
                                 alphabetRender(currentLang);
                                 break;
                         case 16:
+                                if (currentLang[48] == 'en') {
+                                        currentLang == enKeyCodes ?  currentLang = shiftEnKeyCodes : currentLang = shiftEnKeyCodes;
+                                } else if (currentLang[48] == 'ru') {
+                                        currentLang == rusKeyCodes ?  currentLang = shiftRusKeyCodes : currentLang = rusKeyCodes;
+                                }
+                                alphabetRender(currentLang);
+                                break;
                         case 17:
                         case 18:
                         case 91:
@@ -86,6 +94,12 @@ let keyHandler = function() {
         document.addEventListener('keyup', function(event) {
                 document.querySelectorAll(`.key`).forEach(element => {
                         element.classList.remove('active');
+                        if (currentLang[48] == 'en') {
+                                currentLang == shiftEnKeyCodes ?  currentLang = enKeyCodes : false;
+                        } else if (currentLang[48] == 'ru') {
+                                currentLang == shiftRusKeyCodes ?  currentLang = rusKeyCodes : false;
+                        }
+                        alphabetRender(currentLang);
                 })
                 // if (event.keyCode == 20)
         });
@@ -94,7 +108,7 @@ let keyHandler = function() {
 let mouseKeyHandler = function () {
         document.querySelectorAll('.key').forEach(element => {
                 element.addEventListener('mousedown', function(event) {
-                        // console.log(event.target.getAttribute('data'));
+                        console.log(event.target.getAttribute('data'));
                         if (event.target.getAttribute('data') !== 'CapsLock') {
                                 event.target.classList.add('active');
                         }
@@ -129,6 +143,10 @@ let mouseKeyHandler = function () {
                                         event.target.classList.toggle('active');
                                         // currentLang == rusKeyCodes ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
                                         // alphabetRender(currentLang);
+                                        break;
+                                case 'onOff':
+                                        document.getElementById('screen').classList.toggle('hidden');
+                                        document.getElementById('black-screen').classList.toggle('hidden');
                                         break;
 
 
