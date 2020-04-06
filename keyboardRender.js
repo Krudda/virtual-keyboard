@@ -86,12 +86,10 @@ export default function () {
                                 break;
                         }
                         default: {
-                                out += `<div class ="key change" id = "k-${i}">${i}</div>`;
+                                out += `<div class ="key change" id = "k-${i}"></div>`;
                         }
                         
                 }
-                // out += `<div class ="key" onClick = soundClickKey()> ${String.fromCharCode(rusKeys[i])} </div>`;
-                // out += `<div class ="key" onClick = soundClickKey()>${i} </div>`;
         }
         out += '<div class = "naturalization"><div class ="touchpad"></div><div class = "opener"></div></div>';
         document.querySelector('#keyboard').innerHTML = out;
