@@ -6,28 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Virtual keyboard</title>
         <link rel="stylesheet" href="./style.css">
+        <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
 </head>
-<body oncontextmenu="return false;">
-        <div class="wrapper">
-                <div class="monitor">
-                        <div class="blick-effect"></div>
-                        <div class="camera"></div>
-                        <div id="black-screen" class = "hidden"></div>
-                        <div id="screen">
-                                <div class="support-text">
-                                        <p><i>/* работа выполнена под операционной системой macOS */</br>
-                                        /* переключение языка осуществляется клавишами LeftControl + LeftOption */</i></p>
-                                </div>
-                                <textarea id = "textarea" rows="14" spellcheck="false" autofocus></textarea>
-                        </div>
-                        <span>MacBook Pro</span>
-                        <div class="monitor-loop"></div>
-                </div>
-                <div id="keyboard">
-                               
-                </div>
-        </div>
-
-        <script  type="module" src="./script.js"></script>
+<body id = "body" oncontextmenu="return false;">
+<script  type="module" src="./script.js"></script>
 </body>
 </html>

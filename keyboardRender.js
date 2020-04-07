@@ -1,4 +1,26 @@
 export default function () {
+
+        let body = document.getElementById('body');
+
+        let structure = '<div class="wrapper">\
+                <div class="monitor">\
+                        <div class="blick-effect"></div>\
+                        <div class="camera"></div>\
+                        <div id="black-screen" class = "hidden"></div>\
+                        <div id="screen">\
+                                <div class="support-text">\
+                                        <p><i>/* работа выполнена под операционной системой macOS */</br>\
+                                        /* переключение языка осуществляется клавишами LeftControl + LeftOption */</i></p>\
+                                </div>\
+                                <textarea id = "textarea" rows="14" spellcheck="false" autofocus></textarea>\
+                        </div>\
+                        <span>MacBook Pro</span>\
+                        <div class="monitor-loop"></div>\
+                </div>\
+                <div id="keyboard"></div></div>';
+
+        body.insertAdjacentHTML('afterbegin', structure);
+
         let out = '';
         for (let i = 0; i < 14; i++) {
                 if ( i == 0) {
