@@ -46,15 +46,15 @@ export default function () {
                                 break;
                         }
                         case 55: {
-                                out += `<div class = "key ctrl sistem" data = "ControlLeft">control</div>`;
+                                out += `<div class = "key ctrl sistem" id = "ControlLeft" data = "ControlLeft">control</div>`;
                                 break;
                         }
                         case 56: {
-                                out += `<div class = "key opt sistem" data = "AltLeft">option</div>`;
+                                out += `<div class = "key opt sistem" id = "AltLeft" data = "AltLeft">option</div>`;
                                 break;
                         }
                         case 60: {
-                                out += `<div class = "key opt sistem" data = "AltRight">option</div>`;
+                                out += `<div class = "key opt sistem" id = "AltRight" data = "AltRight">option</div>`;
                                 break;
                         }
                         case 57: {
@@ -70,19 +70,19 @@ export default function () {
                                 break;
                         }
                         case 61: {
-                                out += `<div class ="key left-arrow sistem" data = "ArrowLeft"></div>`;
+                                out += `<div class ="key left-arrow sistem" id = "ArrowLeft" data = "◄"></div>`;
                                 break;
                         }
                         case 62: {
-                                out += `<div class ="arrows up-arrow"><div class ="key arrow sistem" data = "ArrowUp"></div>`;
+                                out += `<div class ="arrows up-arrow"><div class ="key arrow sistem" id = "ArrowUp" data = "▲"></div>`;
                                 break;
                         }
                         case 63: {
-                                out += `<div class ="key arrow sistem" data = "ArrowDown"></div></div>`;
+                                out += `<div class ="key arrow sistem" id = "ArrowDown" data = "▼"></div></div>`;
                                 break;
                         }
                         case 64: {
-                                out += `<div class ="key right-arrow sistem" data = "ArrowRight"></div></div></div><div class="audio right"></div>`;
+                                out += `<div class ="key right-arrow sistem" id = "ArrowRight" data = "►"></div></div></div><div class="audio right"></div>`;
                                 break;
                         }
                         default: {
