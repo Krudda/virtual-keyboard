@@ -28,5 +28,8 @@ export const optRusKeyCodes = [167, 33, 64, 35, 36, 169, 94, 38, 8381, 40, 41, 8
 export const optEnKeyCodes = [167, 161, 8482, 163, 162, 8734, 167, 182, 8226, 170, 186, 8211, 8800, 339, 8721, 8216,
 174, 8224, 165, 8804, 94, 248, 960, 8220, 8216, 229, 223, 8706, 402, 169, 729, 8710, 730, 172, 8230, 230, 171, 96, 937,
 8776, 231, 8730, 8747, 126, 181, 8804, 8805, 247, 'en'];
-// let keys = new Set(rusKeyCodes, enKeyCodes);
-// console.log(keys);
+
+export const keyCodes = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4", "Digit5", "Digit6", "Digit7", "Digit8", "Digit9",
+"Digit0", "Minus", "Equal", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft",
+"BracketRight", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote", "Backslash",
+"IntlBackslash", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM", "Comma", "Period", "Slash"];

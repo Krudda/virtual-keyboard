@@ -323,7 +323,7 @@ body {
 .key.caps.active {
         background-size: 17%;
 }
-.key.caps.active>.indicator {
+.key.caps.active .indicator {
         background-color:greenyellow;
 }
 /* .indicator.caps-on {

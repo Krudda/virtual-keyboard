@@ -26,7 +26,7 @@ export default function () {
                                 break;
                         }
                         case 27: {
-                                out += `</div><div class = "row3"><div class = "key caps sistem" data = "CapsLock"><div class = "indicator"></div></div>`;
+                                out += `</div><div class = "row3"><div class = "key caps sistem" data = "CapsLock" id = "CapsLock"><div class = "indicator"></div></div>`;
                                 break;
                         }
                         case 40: {
@@ -66,7 +66,7 @@ export default function () {
                                 break;
                         }
                         case 58: {
-                                out += `<div class ="key space sistem" data = " "></div>`;
+                                out += `<div class ="key space sistem" data = " " id = "Space"></div>`;
                                 break;
                         }
                         case 61: {
@@ -86,7 +86,7 @@ export default function () {
                                 break;
                         }
                         default: {
-                                out += `<div class ="key change" id = "k-${i}"></div>`;
+                                out += `<div class ="key change"></div>`;
                         }
                         
                 }
