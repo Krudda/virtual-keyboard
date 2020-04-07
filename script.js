@@ -88,6 +88,7 @@ let keyHandler = function() {
                                 else if (currentLang[48] == 'en' &&  (event.ctrlKey || pressLeftControl)) {
                                         currentLang = rusKeyCodes;
                                 }
+                                localStorage.setItem('currentLang', currentLang[48]);
                                 alphabetRender(currentLang);
                                 break;
                         case 32:
@@ -169,7 +170,7 @@ let mouseKeyHandler = function () {
                                         } else if (currentLang[48] == 'ru') {
                                                 currentLang == capsRusKeyCodes ?  currentLang = rusKeyCodes : currentLang = capsRusKeyCodes;
                                         }
-                                        localStorage.setItem('currentLang', currentLang);
+                                        localStorage.setItem('currentLang', currentLang[48]);
                                         alphabetRender(currentLang);
                                         break;
                                 case 'ShiftLeft':
@@ -180,7 +181,7 @@ let mouseKeyHandler = function () {
                                         } else if (currentLang[48] == 'ru') {
                                                 currentLang == capsRusKeyCodes ?  currentLang = rusKeyCodes : currentLang = shiftRusKeyCodes;
                                         }
-                                        localStorage.setItem('currentLang', currentLang);
+                                        localStorage.setItem('currentLang', currentLang[48]);
                                         alphabetRender(currentLang);
 
                                         break;
@@ -196,7 +197,7 @@ let mouseKeyHandler = function () {
                                         } else if (currentLang[48] == 'ru'&& document.getElementById('ControlLeft').classList.value == 'key ctrl sistem active') {
                                                 currentLang = enKeyCodes;
                                         }
-                                        localStorage.setItem('currentLang', currentLang);
+                                        localStorage.setItem('currentLang', currentLang[48]);
                                         alphabetRender(currentLang);
                                         break;
                                 case 'onOff':
@@ -213,7 +214,7 @@ let mouseKeyHandler = function () {
                                         currentLang[48] == 'en' ? currentLang = enKeyCodes : false;
                                         currentLang[48] == 'ru' ? currentLang = rusKeyCodes : false;
                                         alphabetRender(currentLang);
-                                        localStorage.setItem('currentLang', currentLang);
+                                        localStorage.setItem('currentLang', currentLang[48]);
                                 } 
                         }
 
@@ -222,9 +223,9 @@ let mouseKeyHandler = function () {
                                         currentLang[49] != 'capsEnKeyCodes' ?  currentLang = capsEnKeyCodes : currentLang = enKeyCodes;
                                 } else if (currentLang[48] == 'ru') {
                                         console.log(currentLang[49]);
-                                        currentLang[49] == 'capsRusKeyCodes' ? currentLang = rusKeyCodes : currentLang = capsRusKeyCodes;
+                                        currentLang[49] != 'capsRusKeyCodes' ? currentLang = rusKeyCodes : currentLang = capsRusKeyCodes;
                                 }
-                                localStorage.setItem('currentLang', currentLang);
+                                localStorage.setItem('currentLang', currentLang[48]);
                                 alphabetRender(currentLang);
                         }
                         
