@@ -1,6 +1,8 @@
-export default function () {
+export default  function () {
 
-        let body = document.getElementById('body');
+        // let body =  document.createElement('body');
+        // console.log(body);
+        // let body = document.getElementById('body');
 
         let structure = '<div class="wrapper">\
                 <div class="monitor">\
@@ -20,6 +22,7 @@ export default function () {
                 <div id="keyboard"></div></div>';
 
         body.insertAdjacentHTML('afterbegin', structure);
+
 
         let out = '';
         for (let i = 0; i < 14; i++) {
@@ -115,4 +118,5 @@ export default function () {
         }
         out += '<div class = "naturalization"><div class ="touchpad"></div><div class = "opener"></div></div>';
         document.querySelector('#keyboard').innerHTML = out;
+
 }

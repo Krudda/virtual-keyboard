@@ -13,8 +13,6 @@ else {
         localStorage.getItem('currentLang') == 'en' ? currentLang = enKeyCodes : currentLang = rusKeyCodes;
 }
 
-// console.log(localStorage.getItem('currentLang').split(','));
-
 let keyNums = document.querySelectorAll('.change');
 let textarea =  document.getElementById('textarea');
 textarea.value = '';
@@ -22,7 +20,6 @@ let capsPress = document.getElementById('CapsLock').classList == 'key caps siste
 
 
 let alphabetRender = function (lang) {
-        // console.log(lang[48]);
         for (let i = 0; i < 48; i++) {
                 keyNums[i].innerHTML = String.fromCharCode(lang[i]);
                 keyNums[i].setAttribute('data', String.fromCharCode(lang[i]));
@@ -31,43 +28,14 @@ let alphabetRender = function (lang) {
 }
 alphabetRender(currentLang);
 
-
-// let enKB = [];
-// document.onkeypress = function(event) {
-//         enKB.push(event.code);
-//         console.log(enKB);
-// }
-
-
 let keyHandler = function() {
         document.addEventListener('keydown', function(event) {
                 event.preventDefault();
-                // if ((event.code == 'AltLeft' && event.ctrlKey) || (event.code == 'ControlLeft' && event.altKey))  {
-                //         console.log('Change!');
-                //         currentLang[48] == 'ru' ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
-                //         localStorage.setItem('currentLang', currentLang[48]);
-                //         alphabetRender(currentLang);
-                // }
 
                 let pressLeftOption = document.getElementById('AltLeft').className == 'key opt sistem active';
                 let pressLeftControl = document.getElementById('ControlLeft').className == 'key ctrl sistem active';
                 
-                // if (event.code == 'ControlLeft' && pressLeftOption)  {
-                //         console.log('Change!');
-                //         currentLang[48] == 'ru' ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
-                //         localStorage.setItem('currentLang', currentLang[48]);
-                //         alphabetRender(currentLang);
-                // }
 
-                // if (event.code == 'AltLeft' && pressLeftControl)  {
-                //         console.log('Change!');
-                //         currentLang[48] == 'ru' ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
-                //         localStorage.setItem('currentLang', currentLang[48]);
-                //         alphabetRender(currentLang);
-                // }
-
-                console.log(event);
-                console.log(event.keyCode);
                 switch (event.keyCode) {
                         case 9:
                                 event.returnValue = false;
@@ -80,7 +48,6 @@ let keyHandler = function() {
                                         textarea.value += "\n";
                                         break;
                         case 20:
-                                console.log(currentLang[48]);
                                 document.querySelector(`.key[data = "${event.key}"]`).classList.toggle('active');
                                 if (currentLang[48] == 'en') {
                                         currentLang == enKeyCodes ?  currentLang = capsEnKeyCodes :  currentLang = enKeyCodes;
@@ -100,27 +67,16 @@ let keyHandler = function() {
                                 alphabetRender(currentLang);
                                 break;
                         case 17:
-                                console.log('pressLeftControl ', pressLeftControl);
-                                console.log('capsPress: ', capsPress);
-                                console.log('pressLeftOption: ', pressLeftOption);
-
                                 document.querySelector(`.key[data = "${event.code}"]`).classList.add('active');
 
                                 if (currentLang[48] == 'ru' &&  (capsPress || pressLeftOption)) {
-                                        console.log("РУ, Будем менять язык");
                                         currentLang = enKeyCodes;
                                 } else if (currentLang[48] == 'en' &&  (capsPress || pressLeftOption)) {
-                                        console.log("ЕН, Будем менять язык");
                                         currentLang = rusKeyCodes;
                                 }
                                 alphabetRender(currentLang);
                                 break;
-                        case 18:
-                                console.log('LeftControl ', pressLeftControl);
-                                console.log('caps: ', capsPress);
-                                console.log('event.ctrlKey: ', event.ctrlKey);
-                                console.log(event.ctrlKey || pressLeftControl);
-                                
+                        case 18:   
                                 document.querySelector(`.key[data = "${event.code}"]`).classList.add('active');
                                 if (currentLang[48] == 'en' &&  !event.ctrlKey && !pressLeftControl) {
                                         currentLang = optEnKeyCodes;
@@ -182,7 +138,6 @@ let mouseKeyHandler = function () {
                         if (event.target.getAttribute('data') !== 'CapsLock') {
                                 event.target.classList.add('active');
                         }
-                        // event.target.classList.add('active');
                         let keyValue = event.target.classList.value;
                         if (keyValue == 'key change active' || keyValue == 'key space sistem active') {
                                 let letter = event.target.getAttribute('data');
@@ -191,13 +146,12 @@ let mouseKeyHandler = function () {
                                 textarea.focus();
                         } ;
                         if (keyValue == 'key left-arrow sistem active' || keyValue == 'key arrow sistem active' || keyValue == 'key right-arrow sistem active') {
-                                console.log(keyValue);
                                 let letter = event.target.getAttribute('data');
                                 textarea.focus();
                                 textarea.value += letter;
                                 textarea.focus();
                         } 
-                        console.log(event.target.getAttribute('data'));
+
                         switch (event.target.getAttribute('data')) {
                                 case 'Enter':
                                         textarea.value += "\n";
@@ -215,7 +169,6 @@ let mouseKeyHandler = function () {
                                         } else if (currentLang[48] == 'ru') {
                                                 currentLang == capsRusKeyCodes ?  currentLang = rusKeyCodes : currentLang = capsRusKeyCodes;
                                         }
-                                        // currentLang == rusKeyCodes ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
                                         localStorage.setItem('currentLang', currentLang);
                                         alphabetRender(currentLang);
                                         break;
@@ -227,29 +180,22 @@ let mouseKeyHandler = function () {
                                         } else if (currentLang[48] == 'ru') {
                                                 currentLang == capsRusKeyCodes ?  currentLang = rusKeyCodes : currentLang = shiftRusKeyCodes;
                                         }
-                                        // currentLang == rusKeyCodes ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
                                         localStorage.setItem('currentLang', currentLang);
                                         alphabetRender(currentLang);
-                                        // currentLang == rusKeyCodes ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
-                                        // alphabetRender(currentLang);
+
                                         break;
                                 case 'AltLeft':
                                 case 'AltRight':
                                         event.target.classList.add('active');
                                         if (currentLang[48] == 'en' && document.getElementById('ControlLeft').classList.value != 'key ctrl sistem active') {
-                                                console.log(1);
                                                 currentLang = optEnKeyCodes;
                                         } else if (currentLang[48] == 'ru' && document.getElementById('ControlLeft').classList.value != 'key ctrl sistem active') {
-                                                console.log(2);
                                                 currentLang = optRusKeyCodes;
                                         } else if (currentLang[48] == 'en' && document.getElementById('ControlLeft').classList.value == 'key ctrl sistem active') {
-                                                console.log(3);
                                                 currentLang = rusKeyCodes;
                                         } else if (currentLang[48] == 'ru'&& document.getElementById('ControlLeft').classList.value == 'key ctrl sistem active') {
-                                                console.log(4);
                                                 currentLang = enKeyCodes;
                                         }
-                                        // currentLang == rusKeyCodes ?  currentLang = enKeyCodes : currentLang = rusKeyCodes;
                                         localStorage.setItem('currentLang', currentLang);
                                         alphabetRender(currentLang);
                                         break;
@@ -260,37 +206,27 @@ let mouseKeyHandler = function () {
                         }
                 });
                 element.addEventListener('mouseup', function(event) {
-                        // let capsPress = document.getElementById('CapsLock').classList == 'key caps sistem active';
                         let currentKey = event.target.getAttribute('data');     
-
                         if (currentKey !== 'CapsLock') {
                                 event.target.classList.remove('active');
-                                if (!capsPress) {
+                                if (currentLang[49] != 'capsRusKeyCodes' && currentLang[49] != 'capsEnKeyCodes') {
                                         currentLang[48] == 'en' ? currentLang = enKeyCodes : false;
                                         currentLang[48] == 'ru' ? currentLang = rusKeyCodes : false;
                                         alphabetRender(currentLang);
                                         localStorage.setItem('currentLang', currentLang);
-                                }
+                                } 
                         }
 
                         if (currentKey == 'ShiftLeft' || currentKey == 'ShiftRight' || currentKey == 'AltLeft' || currentKey == 'AltRight') {
                                 if (currentLang[48] == 'en') {
-                                        capsPress ?  currentLang = capsEnKeyCodes : currentLang = enKeyCodes;
+                                        currentLang[49] != 'capsEnKeyCodes' ?  currentLang = capsEnKeyCodes : currentLang = enKeyCodes;
                                 } else if (currentLang[48] == 'ru') {
-                                        capsPress ? currentLang = capsRusKeyCodes : rusKeyCodes;
+                                        console.log(currentLang[49]);
+                                        currentLang[49] == 'capsRusKeyCodes' ? currentLang = rusKeyCodes : currentLang = capsRusKeyCodes;
                                 }
                                 localStorage.setItem('currentLang', currentLang);
                                 alphabetRender(currentLang);
                         }
-                        // if (currentKey == 'AltLeft' || currentKey == 'AltRight') {
-                        //         if (currentLang[48] == 'en') {
-                        //                 capsPress ?  currentLang = capsEnKeyCodes : currentLang = enKeyCodes;
-                        //         } else if (currentLang[48] == 'ru') {
-                        //                 capsPress ? currentLang = capsRusKeyCodes : rusKeyCodes;
-                        //         }
-                        //         localStorage.setItem('currentLang', currentLang);
-                        //         alphabetRender(currentLang);
-                        // }
                         
                 });
         });
@@ -298,3 +234,4 @@ let mouseKeyHandler = function () {
 
 keyHandler();
 mouseKeyHandler();
+
