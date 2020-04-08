@@ -208,25 +208,19 @@ let mouseKeyHandler = function () {
                 });
                 element.addEventListener('mouseup', function(event) {
                         let currentKey = event.target.getAttribute('data');     
+                        let capsBtnPress = document.getElementById('CapsLock').classList == 'key caps sistem active';
+
                         if (currentKey !== 'CapsLock') {
                                 event.target.classList.remove('active');
-                                if (currentLang[49] != 'capsRusKeyCodes' && currentLang[49] != 'capsEnKeyCodes') {
-                                        currentLang[48] == 'en' ? currentLang = enKeyCodes : false;
-                                        currentLang[48] == 'ru' ? currentLang = rusKeyCodes : false;
-                                        alphabetRender(currentLang);
+                                if (currentKey == 'ShiftLeft' || currentKey == 'ShiftRight' || currentKey == 'AltLeft' || currentKey == 'AltRight') {
+                                        if (currentLang[48] == 'en') {
+                                                capsBtnPress ?  currentLang = capsEnKeyCodes : currentLang = enKeyCodes;
+                                        } else if (currentLang[48] == 'ru') {
+                                                capsBtnPress ? currentLang = capsRusKeyCodes : currentLang = rusKeyCodes;
+                                        }
                                         localStorage.setItem('currentLang', currentLang[48]);
-                                } 
-                        }
-
-                        if (currentKey == 'ShiftLeft' || currentKey == 'ShiftRight' || currentKey == 'AltLeft' || currentKey == 'AltRight') {
-                                if (currentLang[48] == 'en') {
-                                        currentLang[49] != 'capsEnKeyCodes' ?  currentLang = capsEnKeyCodes : currentLang = enKeyCodes;
-                                } else if (currentLang[48] == 'ru') {
-                                        console.log(currentLang[49]);
-                                        currentLang[49] != 'capsRusKeyCodes' ? currentLang = rusKeyCodes : currentLang = capsRusKeyCodes;
+                                        alphabetRender(currentLang);
                                 }
-                                localStorage.setItem('currentLang', currentLang[48]);
-                                alphabetRender(currentLang);
                         }
                         
                 });
