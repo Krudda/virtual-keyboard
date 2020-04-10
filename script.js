@@ -42,11 +42,13 @@ let keyHandler = function() {
                                 textarea.value += '    ';
                                 break;
                         case 8:
+                                document.querySelector(`.key[data = "${event.code}"]`).classList.add('active');
                                 textarea.value = textarea.value.slice(0, -1);
                                 break;
                         case 13:
-                                        textarea.value += "\n";
-                                        break;
+                                document.querySelector(`.key[data = "${event.code}"]`).classList.add('active');
+                                textarea.value += "\n";
+                                break;
                         case 20:
                                 document.querySelector(`.key[data = "${event.key}"]`).classList.toggle('active');
                                 if (currentLang[48] == 'en') {
