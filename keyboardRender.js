@@ -1,9 +1,5 @@
 export default  function () {
 
-        // let body =  document.createElement('body');
-        // console.log(body);
-        // let body = document.getElementById('body');
-
         let structure = '<div class="wrapper">\
                 <div class="monitor">\
                         <div class="blick-effect"></div>\
