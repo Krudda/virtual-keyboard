@@ -38,6 +38,7 @@ let keyHandler = function() {
 
                 switch (event.keyCode) {
                         case 9:
+                                document.querySelector(`.key[data = "${event.code}"]`).classList.add('active');
                                 event.returnValue = false;
                                 textarea.value += '    ';
                                 break;
