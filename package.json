@@ -1,0 +1,28 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "virtual application for task virtual keyboard",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krudda/virtual-keyboard.git"
+  },
+  "keywords": [
+    "virtual",
+    "keyboard"
+  ],
+  "author": "Kruglov Dmitrii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krudda/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/Krudda/virtual-keyboard#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
