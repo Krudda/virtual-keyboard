@@ -6,7 +6,7 @@ export default () => {
                         <div id="black-screen" class = "hidden"></div>\
                         <div id="screen">\
                                 <div class="support-text">\
-                                        <p><i>/* padova выполнена под операционной системой macOS */</br>\
+                                        <p><i>/* работа выполнена под операционной системой macOS */</br>\
                                         /* переключение языка осуществляется клавишами LeftControl + LeftOption */</i></p>\
                                 </div>\
                                 <textarea id = "textarea" rows="14" spellcheck="false" autofocus></textarea>\
